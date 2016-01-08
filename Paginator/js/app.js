@@ -3,7 +3,7 @@
  * @author Vinit Kumar
  */
 
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['paginator']);
 
 myApp.controller('paginationController', function($scope){
 	var records = [];
