@@ -6,14 +6,14 @@ This AngularJS directive creates pagination.
 ### Usage
 `<paginator view-count="5" page-count="10" total-count="100" on-first="callFirst" on-last="callLast" on-prev="callPrev" on-next="callNext" on-page="callPage"/>`
 
-view-count -> No of records to be displayed on the screen
-page-count -> No of page links to be displayed at a time
-total-count -> To tal no of records
-on-first -> Method to be called on click of first link
-on-last-> Method to be called on click of last link
-on-prev-> Method to be called on click of prev link
-on-next-> Method to be called on click of next link
-on-page-> Method to be called on click of page no. link
+view-count -> No of records to be displayed on the screen<br />
+page-count -> No of page links to be displayed at a time<br />
+total-count -> To tal no of records<br />
+on-first -> Method to be called on click of first link<br />
+on-last-> Method to be called on click of last link<br />
+on-prev-> Method to be called on click of prev link<br />
+on-next-> Method to be called on click of next link<br />
+on-page-> Method to be called on click of page no. link<br />
 
 ### Methods signature
 All methods have the same signature like
