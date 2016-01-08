@@ -1,7 +1,11 @@
 /**
- * Directive to create pagination
+ * paginator.js
+ * @author Vinit Kumar
+ * 
+ * This directive creates pagination as per the paramters provided.
+ * It is fully customizable.
  */
-angular.module('paginator', [])..directive('paginator', function(){
+angular.module('paginator', []).directive('paginator', function(){
 	return {
 		restrict: 'EA',
 		scope: {
