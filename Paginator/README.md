@@ -1,6 +1,7 @@
 ## Paginator
 This AngularJS directive creates pagination.
-![alt tag](https://raw.github.com/vinigem/AngularJS/branch/Paginator/paginator.jpeg)
+<br />
+![Paginator](https://raw.githubusercontent.com/vinigem/AngularJS/master/Paginator/Paginator.jpg?_sm_au_=ijsz9M48KqZsQ75q)
 
 ### Usage
 `<paginator view-count="5" page-count="10" total-count="100" on-first="callFirst" on-last="callLast" on-prev="callPrev" on-next="callNext" on-page="callPage"/>`
