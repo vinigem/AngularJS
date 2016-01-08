@@ -147,11 +147,11 @@ myApp.directive('paginator', function(){
 		},
 		template :	"<div class='center'>" +
 						"<ul class='paginator'>" +
-							"<li><a href='#' id='pgFirst' ng-click='callFirst();'>&#171;</a></li>" +
-							"<li><a href='#' id='pgPrev' ng-click='callPrev();' ng-if='start != 0'>&#8249;</a></li>" +
-							"<li ng-repeat='pageNo in pages track by $index'><a href='#' ' id='pg{{pageNo}}' ng-click='callPage(pageNo)' ng-class=\"{'active':isActive(pageNo), '': false}\">{{pageNo}}</a></li>" +
-							"<li><a href='#' id='pgNext' ng-click='callNext();' ng-if='start != (totalPages-1) * viewCount'>&#8250;</a></li>" +
-							"<li><a href='#'' id='pgLast' ng-click='callLast();'>&#187;</a></li>" +
+							"<li><a href='#' id='pgFirst' ng-click='callFirst();' title='First'>&#171;</a></li>" +
+							"<li><a href='#' id='pgPrev' ng-click='callPrev();' ng-if='start != 0'  title='Previous'>&#8249;</a></li>" +
+							"<li ng-repeat='pageNo in pages track by $index'><a href='#' ' id='pg{{pageNo}}' ng-click='callPage(pageNo)' ng-class=\"{'active':isActive(pageNo), '': false}\"  title='Page {{pageNo}}'>{{pageNo}}</a></li>" +
+							"<li><a href='#' id='pgNext' ng-click='callNext();' ng-if='start != (totalPages-1) * viewCount' title='Next'>&#8250;</a></li>" +
+							"<li><a href='#'' id='pgLast' ng-click='callLast();' title='Last'>&#187;</a></li>" +
 						" </ul>"+
 					"</div>"
 	}
