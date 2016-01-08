@@ -15,8 +15,10 @@ on-page-> Method to be called on click of page no. link
 
 ### Methods signature
 All methods have the same signature like
+<br />
        ` $scope.callFirst = function(start, max){`
 		`$scope.tableData = records.slice(start, start + max);`
 	`};`
+<br />
 Here start is the start index of the record and max is the max no of records from the start index to be fetched.
 These values will be provided by the directive itself.
