@@ -9,9 +9,9 @@ angular.module('paginator', []).directive('paginator', function(){
 	return {
 		restrict: 'EA',
 		scope: {
-			viewCount: '=',
-			pageCount: '=',
-			totalCount: '=',
+			viewCount: '@',
+			pageCount: '@',
+			totalCount: '@',
 			onFirst: '=',
 			onLast: '=',
 			onNext: '=',
@@ -21,9 +21,8 @@ angular.module('paginator', []).directive('paginator', function(){
 		link: function(scope, element, attrs){
 			// to store start index
 			scope.start = 0;
-			scope.viewCount = parseInt(scope.viewCount);
-			scope.pageCount = parseInt(scope.pageCount);
-			scope.totalCount = parseInt(scope.totalCount);
+			scope.viewCount = scope.viewCount == undefined ? 5 : scope.viewCount; // set default to 5
+			scope.pageCount = scope.pageCount == undefined ? 5 : scope.pageCount; // set default to 5
 			
 			// to store current page number
 			scope.currentPage = 0;
@@ -38,31 +37,31 @@ angular.module('paginator', []).directive('paginator', function(){
 			// To be called when 'First' link is clicked
 			scope.callFirst = function(){
 				scope.start = 0;
-				scope.onFirst(scope.start, scope.viewCount);
+				scope.onFirst(scope.start, parseInt(scope.viewCount));
 			};
 			
 			// To be called when 'Last' link is clicked
 			scope.callLast = function(){
 				scope.start = (scope.totalPages - 1) * scope.viewCount;
-				scope.onLast(scope.start, scope.viewCount);
+				scope.onLast(scope.start, parseInt(scope.viewCount));
 			};
 			
 			/// To be called when 'Next' link is clicked
 			scope.callNext = function(){
-				scope.start += scope.viewCount;
-				scope.onNext(scope.start, scope.viewCount);
+				scope.start += parseInt(scope.viewCount);
+				scope.onNext(scope.start, parseInt(scope.viewCount));
 			};
 			
 			// To be called when 'Prev' link is clicked
 			scope.callPrev = function(){
 				scope.start -= scope.viewCount;
-				scope.onPrev(scope.start, scope.viewCount);
+				scope.onPrev(scope.start, parseInt(scope.viewCount));
 			};
 			
 			// To be called when 'Page' link is clicked
 			scope.callPage = function(pageNo){
 				scope.start = (pageNo - 1) * scope.viewCount;
-				scope.onPage(scope.start, scope.viewCount);
+				scope.onPage(scope.start, parseInt(scope.viewCount));
 			};
 						
 			// to add page no links
@@ -71,7 +70,7 @@ angular.module('paginator', []).directive('paginator', function(){
 				scope.pages = [];
 				scope.currentPage = (newValue / scope.viewCount) + 1;
 				
-				if(scope.totalPages < scope.pageCount){
+				if(scope.totalPages < parseInt(scope.pageCount)){
 					for(var i =1; i<= scope.totalPages; i++){
 						scope.pages.push(i);
 					}
@@ -85,11 +84,11 @@ angular.module('paginator', []).directive('paginator', function(){
 
 					var startPage = scope.currentPage - centerPage + 1;
 
-					while((startPage + scope.pageCount) - 1 > scope.totalPages){
+					while((startPage + parseInt(scope.pageCount)) - 1 > scope.totalPages){
 						startPage--;
 					}
 
-					while (scope.pages.length < scope.pageCount && startPage <= scope.totalPages) {
+					while (scope.pages.length < parseInt(scope.pageCount) && startPage <= scope.totalPages) {
 						if(startPage < 1){
 							startPage++;
 							continue;
