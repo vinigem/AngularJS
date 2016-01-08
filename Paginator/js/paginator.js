@@ -1,7 +1,7 @@
 /**
  * Directive to create pagination
  */
-myApp.directive('paginator', function(){
+angular.module('paginator', [])..directive('paginator', function(){
 	return {
 		restrict: 'EA',
 		scope: {
