@@ -4,21 +4,16 @@ This AngularJS directive creates pagination.
 ![Paginator](https://raw.githubusercontent.com/vinigem/AngularJS/master/Paginator/Paginator.jpg?_sm_au_=ijsz9M48KqZsQ75q)
 
 ### Usage
-`<paginator view-count="5" page-count="10" total-count="100" on-first="callFirst" on-last="callLast" on-prev="callPrev" on-next="callNext" on-page="callPage"/>`
+`<paginator view-count="5" page-count="10" total-count="100" fetch-records="fetchRecords" />`
 
 view-count -> No of records to be displayed on the screen<br />
 page-count -> No of page links to be displayed at a time<br />
 total-count -> To tal no of records<br />
-on-first -> Method to be called on click of first link<br />
-on-last-> Method to be called on click of last link<br />
-on-prev-> Method to be called on click of prev link<br />
-on-next-> Method to be called on click of next link<br />
-on-page-> Method to be called on click of page no. link<br />
+fetch-records -> Method to be called on to fetch records<br />
 
-### Methods signature
-All methods have the same signature like
+### Method signature
 <br />
-       ` $scope.callFirst = function(start, max){`<br />
+       ` $scope.fetchRecords = function(start, max){`<br />
 		`$scope.tableData = records.slice(start, start + max);`<br />
 	`};`
 <br />

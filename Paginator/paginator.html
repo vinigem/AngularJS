@@ -16,7 +16,7 @@
 				<li ng-repeat="data in tableData track by $index">{{data}}</li>
 			</ul>
 		</div>
-		<paginator view-count="5" page-count="10" total-count="100" on-first="callFirst" on-last="callLast" on-prev="callPrev" on-next="callNext" on-page="callPage"/>
+		<paginator view-count="5" page-count="10" total-count="100" fetch-records="fetchRecords" />
 	</div>
 </body>
 </html>

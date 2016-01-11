@@ -12,11 +12,7 @@ angular.module('paginator', []).directive('paginator', function(){
 			viewCount: '@',
 			pageCount: '@',
 			totalCount: '@',
-			onFirst: '=',
-			onLast: '=',
-			onNext: '=',
-			onPrev: '=',
-			onPage: '='
+			fetchRecords: '='
 		},
 		link: function(scope, element, attrs){
 			// to store start index
@@ -37,31 +33,31 @@ angular.module('paginator', []).directive('paginator', function(){
 			// To be called when 'First' link is clicked
 			scope.callFirst = function(){
 				scope.start = 0;
-				scope.onFirst(scope.start, parseInt(scope.viewCount));
+				scope.fetchRecords(scope.start, parseInt(scope.viewCount));
 			};
 			
 			// To be called when 'Last' link is clicked
 			scope.callLast = function(){
 				scope.start = (scope.totalPages - 1) * scope.viewCount;
-				scope.onLast(scope.start, parseInt(scope.viewCount));
+				scope.fetchRecords(scope.start, parseInt(scope.viewCount));
 			};
 			
 			/// To be called when 'Next' link is clicked
 			scope.callNext = function(){
 				scope.start += parseInt(scope.viewCount);
-				scope.onNext(scope.start, parseInt(scope.viewCount));
+				scope.fetchRecords(scope.start, parseInt(scope.viewCount));
 			};
 			
 			// To be called when 'Prev' link is clicked
 			scope.callPrev = function(){
 				scope.start -= scope.viewCount;
-				scope.onPrev(scope.start, parseInt(scope.viewCount));
+				scope.fetchRecords(scope.start, parseInt(scope.viewCount));
 			};
 			
 			// To be called when 'Page' link is clicked
 			scope.callPage = function(pageNo){
 				scope.start = (pageNo - 1) * scope.viewCount;
-				scope.onPage(scope.start, parseInt(scope.viewCount));
+				scope.fetchRecords(scope.start, parseInt(scope.viewCount));
 			};
 						
 			// to add page no links
