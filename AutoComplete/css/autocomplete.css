@@ -1,0 +1,80 @@
+@CHARSET "ISO-8859-1";
+
+.auto-complete input[type=text] {
+    height: 26px;
+    width: 300px;
+    margin-left: 50px;
+    padding: 0 12px 0 25px;
+    background: white url("http://cssdeck.com/uploads/media/items/5/5JuDgOa.png") 8px 6px no-repeat;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #a8acbc #babdcc #c0c3d2;
+    border-radius: 13px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
+    -moz-box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
+    -ms-box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
+    -o-box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
+    box-shadow: inset 0 1px #e5e7ed, 0 1px 0 #fcfcfc;
+}
+
+.auto-complete input[type=text]:focus {
+    outline: none;
+    border-color: #66b1ee;
+    -webkit-box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
+    -moz-box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
+    -ms-box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
+    -o-box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
+    box-shadow: 0 0 2px rgba(85, 168, 236, 0.9);
+}
+
+/* .auto-complete input:focus + .results { display: block } */
+
+.auto-complete-results  {
+	position: absolute;
+	max-height: 250px;
+	width: 300px;
+	margin-left: 50px;
+	z-index: 10;
+	padding: 0;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #a8acbc #babdcc #c0c3d2;
+	border-radius: 13px;
+	background-color: #fdfdfd;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";	/* IE 8 */
+	-moz-opacity: 0.9; /* Netscape */
+	-khtml-opacity: 0.9; /* Safari 1.x */
+	opacity: 0.9; /* Good browsers */
+}
+
+.auto-complete-results ul{
+	margin: 0 5px;
+	padding: 0 2px;
+}
+
+.auto-complete-results li{
+	list-style-type: none;
+	padding: 0 2px 0 0;
+}
+.auto-complete-results a{
+	text-decoration: none;
+	
+}
+
+.auto-complete-results li:hover{
+	background-color: #bbc8fb;
+	border-radius: 13px;
+	border-width: 1px;
+    border-style: solid;
+    border-color: #a8acbc #babdcc #c0c3d2;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";	/* IE 8 */
+	-moz-opacity: 0.9; /* Netscape */
+	-khtml-opacity: 0.9; /* Safari 1.x */
+	opacity: 0.9; /* Good browsers */
+}
+
