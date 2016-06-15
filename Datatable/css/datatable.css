@@ -1,0 +1,46 @@
+@CHARSET "ISO-8859-1";
+
+.data-table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	empty-cells: show;
+	display: inline-block;
+}
+
+.data-table thead {
+	background-color: #eeeeee;
+	color: #000;
+	text-align: left;
+	vertical-align: bottom;
+}
+
+.data-table th {
+	cursor: pointer;
+}
+
+.data-table td, .data-table th {
+	border-left: 1px solid #cbcbcb;
+	border-width: 0 0 0 1px;
+	font-size: inherit;
+	margin: 0;
+	overflow: visible;
+	padding: .5em 1em;
+	border-bottom: 1px solid #cbcbcb;
+}
+
+.data-table th:last-child, td:last-child {
+	border-right: 1px solid #cbcbcb;
+}
+
+.no-sort{
+	background-image: url("../images/sort_both.png");
+	background-repeat: no-repeat;
+}
+.asc-sort{
+	background-image: url("../images/sort_asc.png");
+	background-repeat: no-repeat;
+}
+.desc-sort{
+	background-image: url("../images/sort_desc.png");
+	background-repeat: no-repeat;
+}

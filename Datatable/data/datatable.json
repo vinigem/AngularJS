@@ -1,0 +1,27 @@
+[  
+   {  
+      "fname": "Prabin",
+      "lname": "Mohanty",
+      "project": "MRR",
+      "designation": "SSE"
+   },
+   {  
+      "fname": "Vinit",
+      "lname": "Kumar",
+      "project": "MR",
+      "designation": "SSE"
+   },
+   {  
+      "fname": "Prabhakar",
+      "lname": "Naidu",
+      "project": "MR",
+      "designation": "SSE"
+   },
+   {  
+      "fname": "Santosh",
+      "lname": "Raikar",
+      "project": "MR & MRR",
+      "designation": "Test Specialist"
+   }
+      
+]

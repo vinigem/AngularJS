@@ -1,0 +1,18 @@
+<div class="data-table">
+	<table>
+		<thead>
+			<tr>
+				<th ng-repeat="col in colDef">
+					<span ng-repeat="(key, value) in col" ng-click="sortByKey(key)">{{value}}
+						<span ng-class="{false:'asc-sort', true:'desc-sort', undefined:'no-sort'}[sortKey[key]]">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+					</span>
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="row in rowList track by $index">
+				<td ng-repeat="(key, value) in row track by $index">{{value}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
