@@ -3,7 +3,7 @@
 		<thead>
 			<tr>
 				<th ng-repeat="col in colDef">
-					<span ng-repeat="(key, value) in col" ng-click="sortByKey(key)">{{value}}
+					<span ng-repeat="(key, value) in col" ng-click="!sortable || sortByKey(key)">{{value}}
 						<span ng-if="sortable" ng-class="{false:'asc-sort', true:'desc-sort', undefined:'no-sort'}[sortKey[key]]">&nbsp;&nbsp;&nbsp;&nbsp;</span>
 					</span>
 				</th>
