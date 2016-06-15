@@ -34,7 +34,7 @@ myApp.directive('dTable', function($document, $filter) {
 		scope: {
 			colDef: '=',
 			rowList: "=",
-			sortable: "@"
+			sortable: "="
 		},
 		link: function (scope, element, attrs) {
 			scope.sortKey = [];
