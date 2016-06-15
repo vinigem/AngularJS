@@ -1,21 +1,11 @@
-## Paginator
-This AngularJS directive creates pagination.
+## Datatable
+This AngularJS directive creates Datatable.
 <br />
-![Paginator](https://raw.githubusercontent.com/vinigem/AngularJS/master/Paginator/Paginator.jpg?_sm_au_=ijsz9M48KqZsQ75q)
+![Datatable](https://raw.githubusercontent.com/vinigem/AngularJS/master/Datatable/datatable.jpg)
 
 ### Usage
-`<paginator view-count="5" page-count="10" total-count="100" fetch-records="fetchRecords" />`
+`<d-table col-def="colDef" row-list="rowList" sortable="true"></d-table>`
 
-view-count -> No of records to be displayed on the screen<br />
-page-count -> No of page links to be displayed at a time<br />
-total-count -> To tal no of records<br />
-fetch-records -> Method to be called on to fetch records<br />
-
-### Method signature
-<br />
-       ` $scope.fetchRecords = function(start, max){`<br />
-		`$scope.tableData = records.slice(start, start + max);`<br />
-	`};`
-<br />
-Here start is the start index of the record and max is the max no of records from the start index to be fetched.
-These values will be provided by the directive itself.
+col-def -> Column Definitions key value pair<br />
+row-list -> List of row objects<br />
+sortable -> enable sorting<br />
