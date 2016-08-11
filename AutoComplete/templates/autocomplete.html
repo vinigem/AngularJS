@@ -1,0 +1,16 @@
+<div class="auto-complete">
+	<input type="text" class="auto-complete-input" ng-model="searchItem" placeholder="{{placeholder}}" />
+	<div class="auto-complete-results" ng-show="showResults">
+		<ul class="ac-results-list" ng-if="multiselect">
+			<li ng-repeat="resultItem in resultItems track by $index">
+				<label class="checkbox" >{{resultItem}}
+					<input type="checkbox" name="selection[]" ng-model="selection.val" ng-checked="isSelected(resultItem)" ng-change="changeSelection(resultItem)" /> 
+					<span class="check_indicator"></span>
+				</label>
+			</li>
+		</ul>
+		<ul class="ac-results-list" ng-if="!multiselect">
+			<li ng-repeat="resultItem in resultItems track by $index" ng-click="selectItem(resultItem);">{{resultItem}}</li>
+		</ul>
+	</div>
+</div>
