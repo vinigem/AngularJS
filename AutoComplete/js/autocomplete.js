@@ -3,6 +3,44 @@
  * @author Vinit Kumar
  */
 
+var myApp = angular.module('myApp', []);
+
+myApp.service('bookService', function($http){
+	return {
+		getBooks : function(size) {
+			return $http({
+			    url: 'getAllBooks?size='+size, 
+			    method: 'GET'
+			 });
+		},
+		getBookNames : function(searchString, size) {
+			return $http({
+			    url: 'getBookNames?searchString='+searchString+'&size='+size, 
+			    method: 'GET'
+			 });
+		}
+	}
+});
+
+myApp.controller('myController', function($scope){
+	$scope.message = 'Welcome to the world of Spring Boot & AngularJS.';
+});
+
+myApp.controller('booksController', function($scope, bookService, $rootScope){
+	$scope.selectedBooks = [];
+	
+	$scope.getBookNames = function(searchString){
+		var bookNames = [];
+		if(!searchString || searchString.length <= 0){
+			return bookNames;
+		}
+
+		return bookService.getBookNames(searchString, 10);
+	}
+
+});
+
+
 myApp.directive('autoComplete', function($document) {
 	return {
 		restrict: 'E',
@@ -51,6 +89,16 @@ myApp.directive('autoComplete', function($document) {
 					scope.selectedItems.push(value);
 				}
 			}
+			
+			// Method to select suggestion on click
+			scope.isSelected = function(value){
+				var idx = scope.selectedItems.indexOf(value);
+				if(idx != -1){
+					return true;
+				}else{
+					return false;
+				}
+			}
 
 			// To hide display if clicked elsewhere
 			$document.on('click', function(event){
@@ -66,17 +114,7 @@ myApp.directive('autoComplete', function($document) {
 				scope.toggleResultDisplay(false);
 			}
 		},
-		template: '<div class="auto-complete">'+
-					'<input type="text" class="auto-complete-input" ng-model="searchItem" placeholder="{{placeholder}}" />'+
-					'<div class="auto-complete-results" ng-show="showResults">'+
-						'<ul class="ac-results-list" ng-if="multiselect">'+
-							'<li ng-repeat="resultItem in resultItems track by $index"> <input type="checkbox" name="selection[]" ng-model="selection.val" ng-change="changeSelection(resultItem)" /> {{resultItem}}</li>'+
-						'</ul>'+
-						'<ul class="ac-results-list" ng-if="!multiselect">'+
-							'<li ng-repeat="resultItem in resultItems track by $index" ng-click="selectItem(resultItem);">{{resultItem}}</li>'+
-						'</ul>'+
-					'</div>'+
-				   '</div>'
+		templateUrl: 'templates/autocomplete.html'
 	}
 });
 
