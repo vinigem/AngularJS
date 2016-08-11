@@ -36,7 +36,6 @@
 
 .auto-complete-results  {
 	position: absolute;
-	max-height: 250px;
 	width: 300px;
 	margin-left: 50px;
 	z-index: 10;
@@ -45,11 +44,7 @@
 	border-style: solid;
 	border-color: #a8acbc #babdcc #c0c3d2;
 	border-radius: 13px;
-	background-color: #fdfdfd;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";	/* IE 8 */
-	-moz-opacity: 0.9; /* Netscape */
-	-khtml-opacity: 0.9; /* Safari 1.x */
-	opacity: 0.9; /* Good browsers */
+	background-color: #F0F5FB;
 }
 
 .auto-complete-results ul{
@@ -59,16 +54,15 @@
 
 .auto-complete-results li{
 	list-style-type: none;
-	padding: 0 2px 0 0;
+	padding: 2px 5px;
 }
 .auto-complete-results a{
 	text-decoration: none;
-	
 }
 
 .auto-complete-results li:hover{
 	background-color: #bbc8fb;
-	border-radius: 13px;
+	border-radius: 5px;
 	border-width: 1px;
     border-style: solid;
     border-color: #a8acbc #babdcc #c0c3d2;
@@ -78,3 +72,41 @@
 	opacity: 0.9; /* Good browsers */
 }
 
+.checkbox {
+	position: relative;
+	display: block;
+	margin-bottom: 5px;
+	padding-left: 30px;
+	cursor: pointer;
+}
+
+.checkbox input {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+}
+
+.check_indicator {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 15px;
+	height: 15px;
+	background: #ffffff;
+	border: 1px inset gray;
+}
+
+/* Hover on unchecked state */
+.checkbox:hover input ~ .check_indicator {
+	background: #ccc;
+}
+
+/* Checked state */
+.checkbox input:checked ~ .check_indicator {
+	background: #2aa1c0;
+}
+
+/* Hover on checked state */
+.checkbox:hover :checked ~ .check_indicator{
+	background: #0e647d;
+}
